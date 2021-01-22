@@ -10,6 +10,7 @@ module Caching
         cache_record(attrs[record_id_name])
       rescue *Tatooine::ERROR_CLASSES => e
         print e
+        #output to production error handling
       end
     end
 
