@@ -29,7 +29,7 @@ function Planet(props){
   }
 
   function fetchPlanet(){
-    fetch("http:/\/localhost:3000/planets/" + props.id)
+    fetch("/planets/" + props.id)
       .then(res => res.json())
       .then(
         (result) => {

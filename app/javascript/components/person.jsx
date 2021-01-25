@@ -29,7 +29,7 @@ function Person(props){
   }
 
   function fetchPerson(){
-    fetch("http:/\/localhost:3000/people/" + props.id)
+    fetch("/people/" + props.id)
       .then(res => res.json())
       .then(
         (result) => {
