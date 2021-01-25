@@ -13,13 +13,13 @@ function KeyValuePair(props){
   if(Array.isArray(props.value)){
     props.value.map((related, idx) => {
       let newUrl = rewriteUrl(related.url)
-      values.push(<div key={ idx }><Button url={ newUrl } text={ newUrl }/></div>)
+      values.push(<Button url={ newUrl } text={ newUrl } key={ idx }/>)
     })
   } else if(typeof(props.value) === "object") {
     if(Object.keys(props.value).includes("url")){
       let newUrl = rewriteUrl(props.value.url)
 
-      values.push(<div key="1"><Button url={ newUrl } text={ newUrl } /></div>)
+      values.push(<Button key={ "1" } url={ newUrl } text={ newUrl } />)
     }
   } else if(typeof(props.value === "string")){
      values.push(<span key="1">{ props.value }</span>)

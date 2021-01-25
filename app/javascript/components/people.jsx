@@ -11,10 +11,22 @@ function People(props) {
     return String(parseInt(lastId) + 1)
   }
 
+  function previousID(lastId){
+    return String(parseInt(lastId) -1)
+  }
+
   return(
-    <div>
-      <button>
-        <Link to={`${nextID(id)}`}>Next</Link>
+    <div style={{ marginLeft: "20px"}}>
+      { 
+        id > 1
+        ? (
+        <button style={{ borderWidth: "0", backgroundColor: "white" }} >
+          <Link className="btn btn-primary" to={`${previousID(id)}`}>Back</Link>
+        </button>
+        ) : null 
+      }
+      <button style={{ borderWidth: "0", backgroundColor: "white" }} >
+        <Link className="btn btn-primary" to={`${nextID(id)}`}>Next</Link>
       </button>
       <Person id={id} />
     </div> 

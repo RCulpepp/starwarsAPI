@@ -7,23 +7,21 @@ import Planets from '../components/planets'
 ReactDOM.render(
   <HashRouter>
      <div>
-      <nav className="navbar">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <Link className="nav-link" to="/people/1">People</Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="/planets/1">Planets</Link>
-          </li>
-        </ul>
-      </nav>
+      <ul className="nav nav-pills">
+        <li className="nav-item">
+          <Link className="nav-link" to="/people/1">People</Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/planets/1">Planets</Link>
+        </li>
+      </ul>
     </div>
-    <Switch>
+    <Switch >
       <Route path="/people/:id" >
-        <People />
+        <People styles={{ marginLeft: "20px"}}/>
       </Route>
       <Route path="/planets/:id" >
-        <Planets />
+        <Planets styles={{ marginLeft: "20px"}} />
       </Route>
     </Switch>
   </HashRouter>,
